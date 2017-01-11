@@ -1,0 +1,361 @@
+// html and css
+.html,
+.jsx,
+.jinja,
+.css,
+.less,
+.scss,
+.postcss {
+
+  .constant {
+    color: @aqua;
+
+    &.character {
+
+      &.entity {
+        color: @aqua;
+      }
+    }
+
+    &.numeric {
+      color: @greenaqua;
+      font-weight: normal;
+    }
+
+    .punctuation.definition {
+      color: inherit;
+    }
+  }
+
+  .entity {
+
+    &.name {
+
+      &.tag {
+        color: @red;
+      }
+    }
+
+    &.other {
+
+      &.attribute-name {
+
+        &.attribute,
+        &.class {
+          color: @yellow;
+        }
+
+        &.html,
+        &.jsx {
+          color: @yellow;
+        }
+
+        &.id {
+          color: @purple;
+        }
+
+        &.parent-selector {
+          color: @yellow;
+          font-weight: bold;
+        }
+
+        &.pseudo-class,
+        &.pseudo-element {
+          color: @yellow;
+        }
+
+        .punctuation {
+          color: @syntax-text-color;
+        }
+      }
+
+      &.jinja {
+
+        &.delimiter {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .keyword {
+
+    &.control {
+
+      &.at-rule {
+        font-weight: bold;
+      }
+
+      &.html {
+        color: @red;
+      }
+
+      &.jinja {
+        color: @green;
+        font-weight: bold;
+      }
+    }
+
+    &.other {
+
+      &.important {
+        color: @red;
+      }
+
+      &.unit {
+        color: @greenaqua;
+      }
+    }
+  }
+
+  .meta {
+
+    &.tag.sgml {
+      color: @gray;
+
+      .punctuation {
+        color: inherit;
+      }
+    }
+
+    &.toc-list.id {
+      color: @purple;
+    }
+  }
+
+  .punctuation {
+
+    &.definition {
+
+      &.tag {
+        color: @syntax-text-color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .string {
+    color: @blueaqua;
+
+    .punctuation {
+      color: @syntax-text-color;
+    }
+  }
+
+  .support {
+
+    &.type {
+
+      &.property-name {
+        font-weight: bold;
+      }
+    }
+
+    &.function {
+      color: @orange;
+    }
+  }
+
+  .variable {
+
+    &.css {
+      color: @green;
+    }
+
+    &.other {
+
+      &.jinja:not(.delimiter) {
+        color: @green;
+      }
+
+      &.less {
+        color: @green;
+      }
+    }
+
+    &.parameter {
+      color: @yellow;
+    }
+  }
+}
+
+// programming languages
+.js,
+.coffee,
+.php,
+.python {
+
+  .constant {
+
+    &.language {
+      color: @aqua;
+    }
+
+    &.numeric {
+      color: @green;
+    }
+
+    &.other {
+      color: @yellow;
+
+      &.character {
+        color: @aqua;
+      }
+
+      &.object {
+        color: @purple;
+
+        &.key {
+          color: @syntax-text-color;
+          font-weight: bold;
+        }
+      }
+
+      &.placeholder {
+        color: @aqua;
+      }
+    }
+  }
+
+  .entity {
+
+    &.name {
+
+      &.function {
+        color: @orange;
+        font-weight: normal;
+      }
+
+      &.type {
+        font-weight: normal;
+
+        &.instance {
+          color: @orange;
+        }
+
+        &.object {
+          color: @purple;
+        }
+      }
+    }
+  }
+
+  .keyword {
+
+    &.control,
+    &.operator {
+      color: @syntax-text-color;
+      font-weight: bold;
+
+      &.regexp {
+        font-weight: normal;
+      }
+    }
+
+    &.other {
+      font-weight: bold;
+    }
+
+  }
+
+  .meta {
+
+    &.function-call {
+      color: @orange;
+
+      &.arguments {
+        color: @syntax-text-color;
+      }
+
+      .delimiter,
+      .punctuation,
+      .meta.brace {
+        color: @syntax-text-color;
+      }
+    }
+  }
+
+  .punctuation {
+
+    &.definition {
+
+      &.string {
+        color: @syntax-text-color;
+      }
+    }
+
+    &.section {
+
+      &.embedded.php {
+        color: @blue;
+      }
+    }
+  }
+
+  .storage {
+
+    &.modifier {
+      color: @aqua;
+      font-weight: bold;
+
+      &.js {
+        color: @red;
+      }
+    }
+
+    &.type {
+      color: @red;
+
+      &.class {
+        font-weight: bold;
+      }
+
+      &.function {
+        color: @orange;
+
+        &.python {
+          color: @aqua;
+          font-weight: bold;
+        }
+      }
+
+      &.var {
+        color: @red;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .string {
+
+    &.quoted {
+      color: @blueaqua;
+    }
+
+    &.regexp {
+      color: @aqua;
+    }
+  }
+
+  .support {
+    color: @purple;
+
+    &.function {
+      color: @purple;
+    }
+  }
+
+  .variable {
+
+    &.language {
+      color: @purple;
+    }
+
+    &.other {
+
+      &.object {
+        color: @greenaqua;
+      }
+    }
+  }
+}
