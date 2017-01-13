@@ -1,138 +1,164 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html class="no-js" lang="en-GB">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
-    <title>Darts101</title>
-    <meta name="author" content="Roel Antonisse">
-    <meta name="description" content="This is your first page">
-    <meta name="keywords" content="home, first, page">
+  <title>Darts101</title>
+  <meta name="author" content="Roel Antonisse">
+  <meta name="description" content="This is your first page">
+  <meta name="keywords" content="home, first, page">
 
-    <!-- Icons -->
-    <link rel="shortcut icon" href="favicon.png">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="favicon.png">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/assets/Darts101.min.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="/assets/Darts101.min.css">
+
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    max-width: calc(960px - var(--padding));
+    font-family: "Century Gothic", sans-serif;
+    font-size: 100%;
+  }
+
+  #menu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  </style>
+
+  <script>
+  (function(window) {
+    var d = window.document;
+    var $html = d.querySelector('html');
+    var $body = d.querySelector('body');
+    var $script = d.createElement('script');
+
+    $html.classList.remove('no-js');
+    $body.append($script);
+  })(window);
+  </script>
 
 </head>
 <body>
 
-    <!-- site-header -->
-<header class="site-header">
-	<h1><a class="menu-trigger" href="#menu" title="Open the Darts101&nbsp;menu">Darts101</a></h1>
-	<p class="site-pagetitle">Darts101</p>
-	<!-- site-nav -->
-	<nav id="menu" class="site-nav">
-		<header>
-			<h2>Menu</h2>
-			<a href="#" class="menu-close" title="close the menu"><span>close menu</span></a>
-		</header>
-		<ul class="menu-list">
+  <!-- site-header -->
+  <header class="site-header">
+    <h1><a class="menu-trigger" href="#menu" title="Open the Darts101&nbsp;menu">Darts101</a></h1>
+    <p class="site-pagetitle">Darts101</p>
+    <!-- site-nav -->
+    <nav id="menu" class="site-nav">
+      <header>
+        <h2>Menu</h2>
+        <a href="#" class="menu-close" title="close the menu"><span>close menu</span></a>
+      </header>
+      <ul class="menu-list">
 
-			<li class="menu-list-item"><a class="menu-link" href="/index.html">Home</a></li>
+        <li class="menu-list-item"><a class="menu-link" href="/index.html">Home</a></li>
 
-			<li class="menu-list-item"><a class="menu-link" href="/games/">Games</a></li>
+        <li class="menu-list-item"><a class="menu-link" href="/games/">Games</a></li>
 
-		</ul>
-	</nav>
-</header>
-
-    <!-- CONTENT -->
-    <section class="content">
-
-<article id="home" class="home">
-  <header>
-    <h2>Darts101</h2>
-    <p>When you need an advanced whiteboard for your darts scoring.</p>
+      </ul>
+    </nav>
   </header>
-  <p>
-    Play darts with your friends and save the games on your smartphone, tablet or pc!
-    If you are a pro, keep track of your statistics and train yourself for coming tournaments.
-  </p>
-  <p>
-    Currently supporting the following features:
-  </p>
-  <ul>
-    <li><a href="/games/X01/">Play a 1 player X01 game</a> - a classic darts game with options!</li>
-  </ul>
 
-  <a name="coming-soon"></a>
-  <h3>Coming&nbsp;soon</h3>
-  <ul>
-    <li>Cricket / Tackticks - Fire your darts at 20 to bullseye</li>
-    <li>Training games:
+  <!-- CONTENT -->
+  <section class="content">
+
+    <article id="home" class="home">
+      <header>
+        <h2>Darts101</h2>
+        <p>When you need an advanced whiteboard for your darts scoring.</p>
+      </header>
+      <p>
+        Play darts with your friends and save the games on your smartphone, tablet or pc!
+        If you are a pro, keep track of your statistics and train yourself for coming tournaments.
+      </p>
+      <p>
+        Currently supporting the following features:
+      </p>
       <ul>
-        <li>Finisher - train your finishing scores, from 1 dart to 3 dart finishes.</li>
-        <li>Accuracy training - throw 3 darts at a given target; singles, doubles & triples.</li>
+        <li><a href="/games/X01/">Play a 1 player X01 game</a> - a classic darts game with options!</li>
       </ul>
-    </li>
-    <li>Statistics:
+
+      <a name="coming-soon"></a>
+      <h3>Coming&nbsp;soon</h3>
       <ul>
-        <li>X01 Match averages</li>
-        <li>X01 Doubles accuracy</li>
+        <li>Cricket / Tackticks - Fire your darts at 20 to bullseye</li>
+        <li>Training games:
+          <ul>
+            <li>Finisher - train your finishing scores, from 1 dart to 3 dart finishes.</li>
+            <li>Accuracy training - throw 3 darts at a given target; singles, doubles & triples.</li>
+          </ul>
+        </li>
+        <li>Statistics:
+          <ul>
+            <li>X01 Match averages</li>
+            <li>X01 Doubles accuracy</li>
+          </ul>
+        </li>
+        <li>Player creation and saving locally, not online!</li>
       </ul>
-    </li>
-    <li>Player creation and saving locally, not online!</li>
-  </ul>
 
-  <a name="update-history"></a>
-  <h3>Update history</h3>
+      <a name="update-history"></a>
+      <h3>Update history</h3>
 
-  <h4>Next update coming:</h4>
-  <ul>
-    <li>
-      <strong>Local storage</strong>
+      <h4>Next update coming:</h4>
       <ul>
-        <li>Create and save up to 8 players on your device</li>
-        <li>Saving data from the last 25 games played per player</li>
-        <li>Automaticly save the last game state for when you accidently close the game, or when you need a break. Pick up where you left!</li>
+        <li>
+          <strong>Local storage</strong>
+          <ul>
+            <li>Create and save up to 8 players on your device</li>
+            <li>Saving data from the last 25 games played per player</li>
+            <li>Automaticly save the last game state for when you accidently close the game, or when you need a break. Pick up where you left!</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Gameplay improvements</strong>
+          <ul>
+            <li>Short leg, set and game reports inbetween games</li>
+            <li>Undo wrongly submitted scores</li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li>
-      <strong>Gameplay improvements</strong>
+
+
+      <h4>Version 1.1 --- 05/07/2016</h4>
       <ul>
-        <li>Short leg, set and game reports inbetween games</li>
-        <li>Undo wrongly submitted scores</li>
+        <li>
+          501 is conversed to X01!
+          <ul>
+            <li>Play with friends!</li>
+            <li>More options available!</li>
+            <li>Gameplay improvements</li>
+            <li>Usability improvements</li>
+          </ul>
+        </li>
       </ul>
-    </li>
-  </ul>
 
 
-  <h4>Version 1.1 --- 05/07/2016</h4>
-  <ul>
-    <li>
-      501 is conversed to X01!
+      <h4>Version 1.0 --- 29/06/2016</h4>
       <ul>
-        <li>Play with friends!</li>
-        <li>More options available!</li>
-        <li>Gameplay improvements</li>
-        <li>Usability improvements</li>
+        <li>Play a simple 1 player 501 game</li>
       </ul>
-    </li>
-  </ul>
+    </article>
 
+  </section>
+  <!-- /CONTENT -->
 
-  <h4>Version 1.0 --- 29/06/2016</h4>
-  <ul>
-    <li>Play a simple 1 player 501 game</li>
-  </ul>
-</article>
+  <!-- site-footer -->
+  <footer class="site-footer">
+    <small>
+      Darts101 &copy; 2016 Roel Antonisse
+    </small>
+  </footer>
 
-    </section>
-    <!-- /CONTENT -->
-
-    <!-- site-footer -->
-<footer class="site-footer">
-	<small>
-		Darts101 &copy; 2016 Roel Antonisse
-	</small>
-</footer>
-
-    <!-- SCRIPTS -->
-    <script src="/assets/Darts101.min.js"></script>
-
-    <!-- LIVERELOAD -->
-
+  <!-- SCRIPTS -->
+  <script src="/assets/Darts101.min.js"></script>
 </body>
 </html>
