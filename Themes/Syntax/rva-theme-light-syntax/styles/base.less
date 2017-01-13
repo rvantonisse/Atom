@@ -1,25 +1,78 @@
-.comment {
+.comment,
+.syntax--comment {
   color: @syntax-invisible-character-color;
   font-style: italic;
+
+  .punctuation,
+  .syntax--punctuation {
+    color: inherit;
+  }
 }
 
-.constant {
-  color: @aqua;
+.constant,
+.syntax--constant {
+  color: @syntax-constant-color;
+
+  &.syntax--character {
+
+    &.syntax--entity {
+
+      .syntax--punctuation {
+        color: inherit;
+      }
+    }
+  }
+
+  &.syntax--other {
+
+    &.syntax--color {
+
+      .syntax--punctuation {
+        color: inherit;
+      }
+    }
+  }
 }
 
-.keyword {
+.keyword,
+.syntax--keyword {
   font-weight: bold;
 }
 
-.punctuation {
+.numeric,
+.syntax--numeric,
+.unit,
+.syntax--unit {
+  color: @greenaqua;
+  font-weight: normal;
+}
+
+.punctuation,
+.syntax--punctuation {
   color: @syntax-text-color;
 }
 
-.storage {
+.storage,
+.syntax--storage {
   color: @red;
   font-weight: bold;
 }
 
-.variable {
-  color: @red;
+.string,
+.syntax--string {
+
+  &.quoted,
+  &.syntax--quoted {
+    color: @blueaqua;
+
+    .punctuation,
+    .syntax--punctuation {
+      color: @syntax-text-color;
+    }
+  }
+}
+
+.variable,
+.syntax--variable {
+  color: @lime;
 }

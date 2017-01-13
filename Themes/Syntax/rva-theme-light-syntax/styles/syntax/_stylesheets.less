@@ -1,0 +1,64 @@
+.syntax--css,
+.syntax--postcss,
+.syntax--less,
+.syntax--scss {
+
+  .syntax--constant {
+
+    &.syntax--numeric {
+
+      &.syntax--color {
+        color: @syntax-constant-color;
+
+        .syntax--punctuation {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--tag {
+        color: @red;
+        font-weight: bold;
+      }
+    }
+
+    &.syntax--other {
+
+      &.syntax--attribute-name {
+
+        &.syntax--attribute,
+        &.syntax--class {
+          color: @yellow;
+        }
+
+        &.syntax--id {
+          color: @purple;
+        }
+
+        &.syntax--pseudo-class,
+        &.syntax--pseudo-element {
+          color: @orange;
+        }
+      }
+    }
+  }
+
+  .syntax--support {
+
+    &.syntax--function {
+      color: @syntax-function-color;
+    }
+
+    &.syntax--type {
+
+      &.syntax--property-name {
+        font-weight: bold;
+      }
+    }
+  }
+}
