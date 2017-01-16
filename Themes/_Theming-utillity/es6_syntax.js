@@ -34,6 +34,7 @@ class SlideShow extends Component {
 
   render() {
     const { isActive } = this.state;
+    const FOO = 'bar'; //Constant
     const slides = this.renderSlides();
     const currentSlideProps = this.getSlide(this.getCurrentSlide()).props;
     const slideShowCtrlProps = {
