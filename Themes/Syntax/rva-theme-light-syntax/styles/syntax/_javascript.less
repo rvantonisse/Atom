@@ -23,8 +23,7 @@
     &.syntax--name {
 
       &.syntax--class {
-        color: @red;
-        text-decoration: underline;
+        color: @green;
       }
 
       &.syntax--function {
@@ -57,10 +56,15 @@
   .syntax--variable {
     color: @syntax-text-color;
 
+    &.syntax--other {
+
+      &.syntax--constant {
+        color: @syntax-variable-color;
+      }
+    }
+
     &.syntax--language {
       color: @syntax-reserved-color;
     }
   }
-
-
 }
