@@ -12,7 +12,7 @@
     "version": "0.1",
     "owner": null,
     "contents": {
-        "nodes": [{
+        "nodes": [{ // Some comment
             "uuid": "45a1b79a-066b-4e14-ab85-9b1cb3b7a5bf",
             "title": "Module Name",
             "slug": "0.1",

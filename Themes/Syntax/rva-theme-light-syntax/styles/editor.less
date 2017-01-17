@@ -31,6 +31,10 @@ atom-text-editor {
   }
 
   .selection .region {
+    border-style: solid;
+    border-width: 1px;
+    border-color: @light-gray;
+    border-radius: @syntax-border-radius;
     background-color: @syntax-selection-color;
   }
 
@@ -47,9 +51,9 @@ atom-text-editor {
   }
 
   .bracket-matcher .region {
-    border-bottom-style: dashed;
-    border-bottom-width: 1px;
-    border-bottom-color: @syntax-text-color;
-    background-color: darken(@syntax-background-color, 10%);
+    border-style: dashed;
+    border-width: 1px;
+    border-color: @syntax-text-color;
+    border-radius: @syntax-border-radius;
   }
 }
