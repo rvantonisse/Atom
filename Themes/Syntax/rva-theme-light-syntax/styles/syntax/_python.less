@@ -11,8 +11,25 @@
       &.syntax--type {
 
         &.syntax--class {
-          color: @red;
+          border-bottom: solid 1px currentColor;
+          color: @green;
         }
+      }
+    }
+  }
+
+  .syntax--keyword {
+
+    &.syntax--control {
+
+      &.syntax--import {
+        color: @green;
+      }
+
+      &.syntax--conditional,
+      &.syntax--repeat,
+      &.syntax--statement {
+        color: @syntax-reserved-color;
       }
     }
   }
@@ -22,9 +39,24 @@
     &.syntax--function-call {
       color: @syntax-function-color;
 
-      .syntax--arguments,
-      .syntax--punctuation {
+      & > .syntax--arguments,
+      & > .syntax--punctuation {
         color: @syntax-text-color;
+      }
+    }
+
+    &.syntax--structure {
+
+      &.syntax--dictionary {
+
+        &.syntax--key {
+          color: @syntax-text-color;
+          font-weight: bold;
+
+          .syntax--string {
+            color: inherit;
+          }
+        }
       }
     }
   }
@@ -54,6 +86,10 @@
 
     &.syntax--language {
       color: @syntax-reserved-color;
+    }
+
+    &.syntax--parameter {
+      color: @red;
     }
   }
 }

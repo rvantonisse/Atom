@@ -15,9 +15,11 @@ class SpamBlockMiddleware(object):
 
     def __init__(self):
         self.block_profiles = []
+
         for path, profile in getattr(settings, 'SIMPLESPAMBLOCKER_PROFILES', []):
             regex = re.compile(path)
             self.block_profiles.append((regex, profile))
+
         if app_settings.LOGGER_NAME:
             self.logger = logging.getLogger(name=app_settings.LOGGER_NAME)
         else:
@@ -26,6 +28,7 @@ class SpamBlockMiddleware(object):
     def _get_regexes(self, site):
         cache_key = Option.get_cache_key(site)
         regexes = cache.get(cache_key)
+
         if not regexes:
             try:
                 option = Option.objects.get(site=site)
@@ -33,6 +36,7 @@ class SpamBlockMiddleware(object):
                 return None
             regexes = option.compile_regexes()
             cache.set(cache_key, regexes)
+
         return regexes
 
     def _logging(self, message):
@@ -40,12 +44,15 @@ class SpamBlockMiddleware(object):
             self.logger.info(message)
 
     def _get_logging_message_summary(self, block_key, blocked_value):
-        """ hook point for logging
+        """
+        hook point for logging
+        @block_key:
         """
         return u'Blocked spam by %s: %s' % (block_key, blocked_value)
 
     def _get_logging_message_detail(self, request, profile):
-        """ hook point for logging
+        """
+        hook point for logging
         """
         data = {
             'GET': request.GET,
@@ -64,22 +71,29 @@ class SpamBlockMiddleware(object):
         regexes = self._get_regexes(site)
         if regexes is None or method and request.method != method.upper():
             return False
+
         for key, regex in regexes.items():
             if key in ('remote_addr', 'http_referer', 'http_user_agent'):
                 value = request.META.get(key.upper(), '')
             else:
                 func = profile.get(key, None)
                 value = func and func(request)
-            if value is not None and regexes[key] and regexes[key].search(value):
+
+            if
+            value is not None
+            and regexes[key]
+            and regexes[key].search(value):
                 self._logging(self._get_logging_message_summary(key, value))
                 self._logging(self._get_logging_message_detail(request, profile))
                 return True
+
         return False
 
     def _get_block_profile(self, path_info):
         for regex, profile in self.block_profiles:
             if regex.search(path_info):
                 return profile
+
         return None
 
     def process_view(self, request, view_func, view_args, view_kwargs):
@@ -92,4 +106,5 @@ class SpamBlockMiddleware(object):
                 return HttpResponse(rendered, status=403)
             else:
                 return HttpResponseForbidden('Your comment was detected as a SPAM')
+
         return None
