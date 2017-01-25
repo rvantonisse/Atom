@@ -1,0 +1,76 @@
+.syntax--js {
+
+  .syntax--constant {
+
+    &.syntax--other {
+
+      &.syntax--object {
+
+        &.syntax--key {
+          color: @white;
+
+          .syntax--string {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--class {
+        color: @green;
+      }
+
+      &.syntax--function {
+        color: @syntax-function-color;
+      }
+
+      &.syntax--type {
+
+        &.syntax--object {
+          color: @syntax-reserved-color;
+        }
+      }
+    }
+  }
+
+  .syntax--keyword {
+
+    &.syntax--control {
+      color: @aqua;
+    }
+  }
+
+  .syntax--storage {
+
+    &.syntax--type {
+
+      &.syntax--function {
+        color: @syntax-function-color;
+      }
+    }
+  }
+
+  .syntax--support {
+    color: @syntax-reserved-color;
+  }
+
+  .syntax--variable {
+    color: @syntax-text-color;
+
+    &.syntax--other {
+
+      &.syntax--constant {
+        color: @syntax-variable-color;
+      }
+    }
+
+    &.syntax--language {
+      color: @syntax-reserved-color;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.syntax--python {
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--function {
+        color: @syntax-function-color;
+      }
+
+      &.syntax--type {
+
+        &.syntax--class {
+          border-bottom: solid 1px currentColor;
+          color: @green;
+        }
+      }
+    }
+  }
+
+  .syntax--keyword {
+
+    &.syntax--control {
+
+      &.syntax--import {
+        color: @green;
+      }
+
+      &.syntax--conditional,
+      &.syntax--repeat,
+      &.syntax--statement {
+        color: @syntax-reserved-color;
+      }
+    }
+  }
+
+  .syntax--meta {
+
+    &.syntax--function-call {
+      color: @syntax-function-color;
+
+      & > .syntax--arguments,
+      & > .syntax--punctuation {
+        color: @syntax-text-color;
+      }
+    }
+
+    &.syntax--structure {
+
+      &.syntax--dictionary {
+
+        &.syntax--key {
+          color: @syntax-text-color;
+          font-weight: bold;
+
+          .syntax--string {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .syntax--string {
+
+    &.syntax--quoted {
+
+      &.syntax--block {
+        color: @syntax-invisible-character-color;
+
+        .syntax--punctuation {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .syntax--support {
+
+    &.syntax--function {
+      color: @syntax-reserved-color;
+    }
+  }
+
+  .syntax--variable {
+
+    &.syntax--language {
+      color: @syntax-reserved-color;
+    }
+
+    &.syntax--parameter {
+      color: @red;
+    }
+  }
+}

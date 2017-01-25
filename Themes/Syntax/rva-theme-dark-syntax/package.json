@@ -1,0 +1,12 @@
+{
+  "name": "rva-dark-theme-syntax",
+  "theme": "syntax",
+  "version": "0.1.0",
+  "author": "RV Antonisse",
+  "description": "Simple theme that formats syntax in a functional and readable dark way. At least for me.",
+  "repository": "https://github.com/rvantonisse/Atom/tree/master/Themes/Syntax/rva-theme-light-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0"
+  }
+}

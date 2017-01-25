@@ -1,0 +1,56 @@
+atom-text-editor {
+  color: @syntax-text-color;
+  background-color: @syntax-background-color;
+  letter-spacing: 0.1em;
+
+  .gutter {
+    color: @syntax-gutter-text-color;
+    background-color: @syntax-gutter-background-color;
+
+    .line-number {
+
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+      }
+    }
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .cursor {
+    min-width: 0.5em;
+    background-color: @syntax-selection-color;
+    border-color: @syntax-cursor-color;
+    transition: opacity 0.25s ease;
+  }
+
+  .selection .region {
+    border-radius: @syntax-border-radius;
+    background-color: @syntax-selection-color;
+  }
+
+  .fold-marker::after {
+    content: "...";
+    font-family: inherit;
+    font-size: 1em;
+    cursor: cell;
+  }
+
+  .fold-marker::after,
+  .gutter .line-number.folded {
+    color: @syntax-invisible-character-color;
+  }
+
+  .bracket-matcher .region {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: @syntax-text-color;
+    border-radius: @syntax-border-radius;
+  }
+}

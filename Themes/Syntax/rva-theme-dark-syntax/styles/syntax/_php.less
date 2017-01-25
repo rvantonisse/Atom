@@ -1,0 +1,44 @@
+.syntax--php {
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--class {
+        color: @syntax-variable-color;
+      }
+
+      &.syntax--function {
+        color: @syntax-function-color;
+      }
+
+      &.syntax--type {
+
+        &.syntax--object {
+          color: @syntax-reserved-color;
+        }
+      }
+    }
+  }
+
+  .syntax--meta {
+
+    &.syntax--function-call {
+      color: @syntax-function-color;
+    }
+  }
+
+  .syntax--storage {
+
+    &.syntax--type {
+
+      &.syntax--function {
+        color: @syntax-function-color;
+      }
+    }
+  }
+
+  .syntax--support {
+    color: @syntax-reserved-color;
+  }
+}

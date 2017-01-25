@@ -1,0 +1,38 @@
+// html syntax
+.syntax--html {
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--tag {
+        color: @red;
+      }
+    }
+
+    &.syntax--other {
+
+      &.syntax--attribute-name {
+        color: @yellow;
+
+        &.syntax--id {
+          color: @purple;
+        }
+      }
+    }
+  }
+
+  .syntax--meta {
+
+    &.syntax--tag {
+
+      &.syntax--sgml {
+        color: @syntax-invisible-character-color;
+
+        .syntax--punctuation {
+          color: inherit;
+        }
+      }
+    }
+  }
+}

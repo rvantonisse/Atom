@@ -1,0 +1,70 @@
+.comment,
+.syntax--comment {
+  color: @syntax-invisible-character-color;
+  font-style: italic;
+
+  .punctuation,
+  .syntax--punctuation {
+    color: inherit;
+  }
+}
+
+.constant,
+.syntax--constant {
+  color: @syntax-constant-color;
+
+  &.syntax--character {
+
+    &.syntax--entity {
+
+      .syntax--punctuation {
+        color: inherit;
+      }
+    }
+  }
+
+  &.syntax--other {
+
+    &.syntax--color {
+
+      .syntax--punctuation {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.keyword,
+.syntax--keyword {
+}
+
+.numeric,
+.syntax--numeric,
+.unit,
+.syntax--unit {
+  color: @greenaqua;
+}
+
+.punctuation,
+.syntax--punctuation {
+  color: @syntax-text-color;
+}
+
+.storage,
+.syntax--storage {
+  color: @red;
+}
+
+.string,
+.syntax--string {
+
+  &.quoted,
+  &.syntax--quoted {
+    color: @blueaqua;
+
+    .punctuation,
+    .syntax--punctuation {
+      color: @syntax-text-color;
+    }
+  }
+}

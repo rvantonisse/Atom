@@ -1,0 +1,30 @@
+.syntax--jsx {
+
+  .syntax--entity {
+
+    &.syntax--name {
+
+      &.syntax--tag {
+        color: @red;
+
+        .syntax--component {
+          color: @green;
+        }
+      }
+    }
+
+    &.syntax--other {
+
+      &.syntax--attribute-name {
+        color: @yellow;
+      }
+    }
+  }
+
+  .syntax--punctuation {
+
+    &.syntax--tag {
+      font-weight: bold;
+    }
+  }
+}
