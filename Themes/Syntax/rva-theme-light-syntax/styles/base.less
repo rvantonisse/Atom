@@ -1,16 +1,13 @@
-.comment,
 .syntax--comment {
   color: @syntax-invisible-character-color;
   font-weight: normal;
   font-style: italic;
 
-  .punctuation,
   .syntax--punctuation {
     color: inherit;
   }
 }
 
-.constant,
 .syntax--constant {
   color: @syntax-constant-color;
 
@@ -35,38 +32,30 @@
   }
 }
 
-.keyword,
 .syntax--keyword {
   font-weight: bold;
 }
 
-.numeric,
 .syntax--numeric,
-.unit,
 .syntax--unit {
   color: @greenaqua;
   font-weight: normal;
 }
 
-.punctuation,
 .syntax--punctuation {
   color: @syntax-text-color;
 }
 
-.storage,
 .syntax--storage {
   color: @red;
   font-weight: bold;
 }
 
-.string,
 .syntax--string {
 
-  &.quoted,
   &.syntax--quoted {
     color: @blueaqua;
 
-    .punctuation,
     .syntax--punctuation {
       color: @syntax-text-color;
     }
