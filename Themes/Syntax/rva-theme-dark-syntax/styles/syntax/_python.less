@@ -1,5 +1,15 @@
 .syntax--python {
 
+  .syntax--constant {
+
+    &.syntax--other {
+
+      &.syntax--placeholder {
+        color: @green;
+      }
+    }
+  }
+
   .syntax--entity {
 
     &.syntax--name {
@@ -27,9 +37,17 @@
       }
 
       &.syntax--conditional,
+      &.syntax--exception,
       &.syntax--repeat,
       &.syntax--statement {
-        color: @syntax-reserved-color;
+        color: @syntax-constant-color;
+      }
+    }
+
+    &.syntax--operator {
+
+      &.syntax--logical {
+        color: @syntax-constant-color;
       }
     }
   }
@@ -50,8 +68,7 @@
       &.syntax--dictionary {
 
         &.syntax--key {
-          color: @syntax-text-color;
-          font-weight: bold;
+          color: @white;
 
           .syntax--string {
             color: inherit;
