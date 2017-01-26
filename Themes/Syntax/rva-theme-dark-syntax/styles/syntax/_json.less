@@ -6,8 +6,7 @@
     &.syntax--structure {
 
       &.syntax--dictionary {
-        color: @syntax-text-color;
-        font-weight: bold;
+        color: @white;
 
         .syntax--string {
           color: inherit;
@@ -18,6 +17,10 @@
 
           & > .syntax--string {
             color: @syntax-string-color;
+
+            .syntax--punctuation {
+              color: @syntax-text-color;
+            }
           }
         }
       }
@@ -25,6 +28,7 @@
   }
 
   .syntax--punctuation {
+    color: @syntax-text-color;
     font-weight: normal;
   }
 }
