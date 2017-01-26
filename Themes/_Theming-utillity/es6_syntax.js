@@ -54,6 +54,12 @@ class SlideShow extends Component {
   }
 
   renderSlides() {
+    const slides = this.getSlides();
+
+    for (slide in slides) {
+      console.log(slide);
+    }
+    
     return this.getSlides().map((child, index) => {
       return React.cloneElement(child, {
         current: this.isCurrentSlide(index),

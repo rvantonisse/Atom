@@ -92,6 +92,10 @@ DARTS101.scoreInput = function (DARTS101) {
 		// Add bullseye to doubles
 		doubles.push({"B": 50});
 
+		for (single in singles) {
+			console.log('Single: ' + singles[single]);
+		}
+
 		// Log Doubles
 		// console.log("doubles:", doubles);
 
