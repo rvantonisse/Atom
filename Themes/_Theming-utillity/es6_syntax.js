@@ -8,6 +8,14 @@ import SlideShowCtrl from './../SlideShowCtrl';
 import styles from  './styles.css';
 
 class SlideShow extends Component {
+  /*
+  SlideShow is a presentational component containing Slides
+  which are itterable with the SlideShowCtrl.
+  *
+  @param React.children => Slide Components
+  @param closeOnEnd => boolean
+  */
+
   static propTypes = {
     children: PropTypes.instanceOf(Slide),
     closeOnEnd: PropTypes.boolean,
@@ -16,6 +24,7 @@ class SlideShow extends Component {
   static defaultProps = {
     children: [],
     closeOnEnd: true,
+    someImportedProp: React.Component,
   };
 
   constructor(props) {
@@ -59,8 +68,9 @@ class SlideShow extends Component {
     for (slide in slides) {
       console.log(slide);
     }
-    
+
     return this.getSlides().map((child, index) => {
+
       return React.cloneElement(child, {
         current: this.isCurrentSlide(index),
         next: this.isNextSlide(index),

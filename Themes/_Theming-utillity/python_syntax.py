@@ -10,6 +10,34 @@ from django.utils import simplejson as json
 from simplespamblocker.models import Option
 from simplespamblocker import settings as app_settings
 
+SOMELIST = [
+    'One',
+    'Two',
+    'Three',
+]
+
+for item in SOMELIST:
+    print item.find()
+
+map(SOMELIST)
+
+filter(SOMELIST)
+
+SOMELIST.pop(SOMELIST[0])
+
+NotImplemented
+
+set
+
+frozenset
+
+print iter(SOMELIST)
+
+with open()
+
+binary = 0101 & 1010
+binary.bit_lenght()
+
 
 class SpamBlockMiddleware(object):
 
@@ -22,6 +50,7 @@ class SpamBlockMiddleware(object):
 
         if app_settings.LOGGER_NAME:
             self.logger = logging.getLogger(name=app_settings.LOGGER_NAME)
+
         else:
             self.logger = None
 
@@ -69,6 +98,7 @@ class SpamBlockMiddleware(object):
         site = get_current_site(request)
         method = profile.get('method', None)
         regexes = self._get_regexes(site)
+
         if regexes is None or method and request.method != method.upper():
             return False
 
@@ -79,10 +109,11 @@ class SpamBlockMiddleware(object):
                 func = profile.get(key, None)
                 value = func and func(request)
 
-            if
-            value is not None
-            and regexes[key]
-            and regexes[key].search(value):
+            if (
+                value is not None and
+                regexes[key] and
+                regexes[key].search(value)
+            ):
                 self._logging(self._get_logging_message_summary(key, value))
                 self._logging(self._get_logging_message_detail(request, profile))
                 return True
@@ -98,12 +129,16 @@ class SpamBlockMiddleware(object):
 
     def process_view(self, request, view_func, view_args, view_kwargs):
         profile = self._get_block_profile(request.path_info)
+
         if profile and self._is_spam(request, profile):
             if app_settings.SPAM_TEMPLATE:
                 rendered = loader.render_to_string(
                     app_settings.SPAM_TEMPLATE,
-                    context_instance=RequestContext(request))
+                    context_instance=RequestContext(request)
+                )
+
                 return HttpResponse(rendered, status=403)
+
             else:
                 return HttpResponseForbidden('Your comment was detected as a SPAM')
 

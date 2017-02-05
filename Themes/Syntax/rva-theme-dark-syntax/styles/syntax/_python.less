@@ -2,6 +2,10 @@
 
   .syntax--constant {
 
+    &.syntax--language {
+      color: @syntax-constant-color;
+    }
+
     &.syntax--other {
 
       &.syntax--placeholder {
@@ -36,19 +40,26 @@
         color: @green;
       }
 
+      &.syntax--statement {
+        color: @syntax-variable-color;
+      }
+
       &.syntax--conditional,
       &.syntax--exception,
-      &.syntax--repeat,
-      &.syntax--statement {
-        color: @syntax-constant-color;
+      &.syntax--repeat {
+        color: @white;
       }
     }
 
     &.syntax--operator {
 
       &.syntax--logical {
-        color: @syntax-constant-color;
+        color: @white;
       }
+    }
+
+    &.syntax--other {
+      color: @syntax-reserved-color;
     }
   }
 
@@ -75,6 +86,13 @@
           }
         }
       }
+    }
+  }
+
+  .syntax--punctuation {
+
+    &.syntax--definition {
+      color: @white;
     }
   }
 

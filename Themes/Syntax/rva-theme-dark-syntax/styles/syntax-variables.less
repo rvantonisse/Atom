@@ -10,19 +10,9 @@
 @syntax-selection-color: @transparent-black;
 @syntax-background-color: @very-dark-gray;
 
-// Syntax base colors
-@syntax-constant-color: @aqua;
-@syntax-function-color: @orange;
-@syntax-reserved-color: @purple;
-@syntax-string-color: @blueaqua;
-@syntax-variable-color: @lime;
-
 // Guide colors
 @syntax-wrap-guide-color: @dark-gray;
 @syntax-indent-guide-color: @dark-gray;
-
-// Sizes
-@syntax-border-radius: 3px;
 
 // For find and replace markers
 @syntax-result-marker-color: @gray;
@@ -30,7 +20,7 @@
 
 // Gutter colors
 @syntax-gutter-text-color: @syntax-text-color;
-@syntax-gutter-text-color-selected: @black;
+@syntax-gutter-text-color-selected: @syntax-selection-color;
 @syntax-gutter-border-color: @gray;
 @syntax-gutter-background-color: @syntax-background-color;
 @syntax-gutter-background-color-selected: @syntax-selection-color;
@@ -40,3 +30,16 @@
 @syntax-color-added: @green;
 @syntax-color-modified: @orange;
 @syntax-color-removed: @red;
+
+/*
+Theme specific
+*/
+// Syntax base colors
+@syntax-constant-color: @aqua;
+@syntax-function-color: @orange;
+@syntax-reserved-color: @purple;
+@syntax-string-color: @blueaqua;
+@syntax-variable-color: @lime;
+
+// Sizes
+@syntax-border-radius: 3px;

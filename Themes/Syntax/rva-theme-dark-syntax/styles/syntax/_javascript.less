@@ -5,7 +5,7 @@
     &.syntax--language {
 
       &.syntax--boolean {
-        color: @yellow;
+        color: @syntax-constant-color;
       }
     }
 
@@ -29,7 +29,7 @@
     &.syntax--name {
 
       &.syntax--class {
-        color: @green;
+        text-decoration: underline;
       }
 
       &.syntax--function {
@@ -48,7 +48,61 @@
   .syntax--keyword {
 
     &.syntax--control {
-      color: @aqua;
+      color: @white;
+
+      &.syntax--flow {
+        color: @syntax-variable-color;
+      }
+
+      &.syntax--module {
+        color: @green;
+      }
+    }
+
+    &.syntax--operator {
+      color: @syntax-constant-color;
+
+      &.syntax--accessor,
+      &.syntax--arithmetic,
+      &.syntax--assignment,
+      &.syntax--comparison,
+      &.syntax--logical,
+      &.syntax--relational {
+        color: @white;
+      }
+    }
+  }
+
+  .syntax--meta {
+
+    &.syntax--class {
+
+      &.syntax--extends {
+
+        & + .syntax--entity.syntax--name.syntax--class {
+          color: @green;
+        }
+      }
+    }
+
+    &.syntax--brace,
+    &.syntax--delimiter {
+      color: @white;
+    }
+
+    &.syntax--function {
+
+      &.syntax--parameters {
+        color: @red;
+      }
+    }
+  }
+
+  .syntax--punctuation {
+
+    &.syntax--separator,
+    &.syntax--terminator {
+      color: @white;
     }
   }
 
@@ -67,12 +121,16 @@
   }
 
   .syntax--variable {
-    color: @syntax-text-color;
 
     &.syntax--other {
 
+      &.syntax--class {
+        color: @green;
+        text-decoration: underline;
+      }
+
       &.syntax--constant {
-        color: @syntax-variable-color;
+        color: @syntax-text-color;
       }
     }
 
