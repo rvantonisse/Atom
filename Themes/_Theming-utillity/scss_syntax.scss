@@ -74,6 +74,6 @@ MIXINS
   background-repeat: no-repeat;
 }
 
-body {
+body.faded {
   @import gradient-radial($blue_primary, $blue_tertiary);
 }
