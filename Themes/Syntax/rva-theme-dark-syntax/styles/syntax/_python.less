@@ -1,5 +1,23 @@
 .syntax--python {
 
+  .syntax--comment {
+
+    .syntax--keyword {
+      color: inherit;
+    }
+
+    .syntax--punctuation {
+
+      &.syntax--definition {
+        color: inherit;
+      }
+    }
+
+    .syntax--storage {
+      color: inherit;
+    }
+  }
+
   .syntax--constant {
 
     &.syntax--language {
@@ -112,16 +130,13 @@
 
   .syntax--support {
 
-    &.syntax--function {
+    &.syntax--function,
+    &.syntax--type {
       color: @syntax-reserved-color;
     }
   }
 
   .syntax--variable {
-
-    &.syntax--language {
-      color: @syntax-reserved-color;
-    }
 
     &.syntax--parameter {
       color: @red;
