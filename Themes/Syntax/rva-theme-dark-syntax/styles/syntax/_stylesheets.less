@@ -51,6 +51,19 @@
     }
   }
 
+  .syntax--keyword {
+
+    &.syntax--control {
+
+      &.syntax--html {
+
+        &.syntax--custom {
+          color: @green;
+        }
+      }
+    }
+  }
+
   .syntax--support {
 
     &.syntax--function {
@@ -60,7 +73,7 @@
     &.syntax--type {
 
       &.syntax--property-name {
-        border-bottom: dotted 1px @syntax-text-color;
+        color: @white;
       }
     }
   }
