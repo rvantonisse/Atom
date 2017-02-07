@@ -99,7 +99,10 @@ class SpamBlockMiddleware(object):
         method = profile.get('method', None)
         regexes = self._get_regexes(site)
 
-        if regexes is None or method and request.method != method.upper():
+        if (
+            regexes is None or method and
+            request.method != method.upper()
+        ):
             return False
 
         for key, regex in regexes.items():
