@@ -1,5 +1,19 @@
 .syntax--python {
 
+  .syntax--constant {
+
+    &.syntax--language {
+      color: @syntax-constant-color;
+    }
+
+    &.syntax--other {
+
+      &.syntax--placeholder {
+        color: @green;
+      }
+    }
+  }
+
   .syntax--entity {
 
     &.syntax--name {
@@ -27,9 +41,22 @@
       }
 
       &.syntax--conditional,
+      &.syntax--exception,
       &.syntax--repeat,
       &.syntax--statement {
-        color: @syntax-reserved-color;
+        color: @syntax-text-color;
+        font-weight: bold;
+      }
+    }
+
+    &.syntax--operator {
+
+      &.syntax--arithmetic,
+      &.syntax--assignment,
+      &.syntax--comparison,
+      &.syntax--logical {
+        color: @syntax-text-color;
+        font-weight: bold;
       }
     }
   }
@@ -58,6 +85,14 @@
           }
         }
       }
+    }
+  }
+
+  .syntax--punctuation {
+
+    &.syntax--definition {
+      color: @black;
+      font-weight: bold;
     }
   }
 

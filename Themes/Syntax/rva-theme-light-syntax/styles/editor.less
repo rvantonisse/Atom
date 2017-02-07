@@ -1,7 +1,7 @@
 atom-text-editor {
   color: @syntax-text-color;
   background-color: @syntax-background-color;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 
   .gutter {
     color: @syntax-gutter-text-color;
@@ -27,13 +27,11 @@ atom-text-editor {
     min-width: 0.5em;
     background-color: @syntax-selection-color;
     border-color: @syntax-cursor-color;
+    border-radius: @syntax-border-radius;
     transition: opacity 0.25s ease;
   }
 
   .selection .region {
-    border-style: solid;
-    border-width: 1px;
-    border-color: @light-gray;
     border-radius: @syntax-border-radius;
     background-color: @syntax-selection-color;
   }
