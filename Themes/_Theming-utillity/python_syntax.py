@@ -82,6 +82,7 @@ class SpamBlockMiddleware(object):
     def _get_logging_message_detail(self, request, profile):
         """
         hook point for logging
+        TODO: do something cool
         """
         data = {
             'GET': request.GET,
