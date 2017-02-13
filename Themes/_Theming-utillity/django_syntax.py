@@ -4,7 +4,20 @@ import warnings
 
 from django.core.urlresolvers import reverse
 from django.core.files.images import get_image_dimensions
-from django.db import models
+from django.db.models import (
+    Model,
+    BooleanField,
+    CASCADE,
+    CharField,
+    DateTimeField,
+    FileField,
+    ForeignKey,
+    ImageField,
+    IntegerField,
+    ManyToManyField,
+    SET_NULL,
+    TextField,
+)
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.html import strip_tags
 from django.utils.translation import ugettext
@@ -26,15 +39,15 @@ from .utils.urls import get_named_url_from_quoted_url, is_quoted_url
 
 
 @python_2_unicode_compatible
-class ContentItem(models.Model):
-    created = models.DateTimeField(_('created'), auto_now_add=True)
-    updated = models.DateTimeField(_('updated'), auto_now=True)
-    name = models.CharField(_('name'), blank=True, max_length=255)
+class ContentItem(Model):
+    created = DateTimeField(_('created'), auto_now_add=True)
+    updated = DateTimeField(_('updated'), auto_now=True)
+    name = CharField(_('name'), blank=True, max_length=255)
     content_markup = FiberMarkupField(verbose_name=_('Content'))
     content_html = FiberHTMLField(verbose_name=_('Content'))
-    protected = models.BooleanField(_('protected'), default=False)
+    protected = BooleanField(_('protected'), default=False)
     metadata = JSONField(_('metadata'), blank=True, null=True, schema=METADATA_CONTENT_SCHEMA, prefill_from='fiber.models.ContentItem')
-    template_name = models.CharField(_('template name'), blank=True, max_length=70)
+    template_name = CharField(_('template name'), blank=True, max_length=70)
     used_on_pages_data = JSONField(_('used on pages'), blank=True, null=True)
 
     objects = load_class(CONTENT_ITEM_MANAGER)
@@ -80,22 +93,22 @@ class ContentItem(models.Model):
 
 @python_2_unicode_compatible
 class Page(MPTTModel):
-    created = models.DateTimeField(_('created'), auto_now_add=True)
-    updated = models.DateTimeField(_('updated'), auto_now=True)
-    parent = models.ForeignKey('self', null=True, blank=True, related_name='subpages', verbose_name=_('parent'), on_delete=models.CASCADE)
-    meta_description = models.CharField(max_length=255, blank=True)
-    meta_keywords = models.CharField(max_length=255, blank=True)
-    title = models.CharField(_('title'), max_length=255)
-    doc_title = models.CharField(_('document title'), max_length=255, blank=True)
+    created = DateTimeField(_('created'), auto_now_add=True)
+    updated = DateTimeField(_('updated'), auto_now=True)
+    parent = ForeignKey('self', null=True, blank=True, related_name='subpages', verbose_name=_('parent'), on_delete=CASCADE)
+    meta_description = CharField(max_length=255, blank=True)
+    meta_keywords = CharField(max_length=255, blank=True)
+    title = CharField(_('title'), max_length=255)
+    doc_title = CharField(_('document title'), max_length=255, blank=True)
     url = FiberURLField(blank=True)
-    redirect_page = models.ForeignKey('self', null=True, blank=True, related_name='redirected_pages', verbose_name=_('redirect page'), on_delete=models.SET_NULL)
-    mark_current_regexes = models.TextField(_('mark current regexes'), blank=True)
+    redirect_page = ForeignKey('self', null=True, blank=True, related_name='redirected_pages', verbose_name=_('redirect page'), on_delete=SET_NULL)
+    mark_current_regexes = TextField(_('mark current regexes'), blank=True)
     # TODO: add `alias_page` field
-    template_name = models.CharField(_('template name'), blank=True, max_length=70)
-    show_in_menu = models.BooleanField(_('show in menu'), default=True)
-    is_public = models.BooleanField(_('is public'), default=True)
-    protected = models.BooleanField(_('protected'), default=False)
-    content_items = models.ManyToManyField(ContentItem, through='PageContentItem', verbose_name=_('content items'))
+    template_name = CharField(_('template name'), blank=True, max_length=70)
+    show_in_menu = BooleanField(_('show in menu'), default=True)
+    is_public = BooleanField(_('is public'), default=True)
+    protected = BooleanField(_('protected'), default=False)
+    content_items = ManyToManyField(ContentItem, through='PageContentItem', verbose_name=_('content items'))
     metadata = JSONField(blank=True, null=True, schema=METADATA_PAGE_SCHEMA, prefill_from='fiber.models.Page')
 
     tree = TreeManager()
@@ -231,11 +244,11 @@ class Page(MPTTModel):
             return False
 
 
-class PageContentItem(models.Model):
-    content_item = models.ForeignKey(ContentItem, related_name='page_content_items', verbose_name=_('content item'), on_delete=models.CASCADE)
-    page = models.ForeignKey(Page, related_name='page_content_items', verbose_name=_('page'), on_delete=models.CASCADE)
-    block_name = models.CharField(_('block name'), max_length=255)
-    sort = models.IntegerField(_('sort'), blank=True, null=True)
+class PageContentItem(Model):
+    content_item = ForeignKey(ContentItem, related_name='page_content_items', verbose_name=_('content item'), on_delete=CASCADE)
+    page = ForeignKey(Page, related_name='page_content_items', verbose_name=_('page'), on_delete=CASCADE)
+    block_name = CharField(_('block name'), max_length=255)
+    sort = IntegerField(_('sort'), blank=True, null=True)
 
     def save(self, *args, **kwargs):
         super(PageContentItem, self).save(*args, **kwargs)
@@ -279,13 +292,13 @@ class PageContentItem(models.Model):
 
 
 @python_2_unicode_compatible
-class Image(models.Model):
-    created = models.DateTimeField(_('created'), auto_now_add=True)
-    updated = models.DateTimeField(_('updated'), auto_now=True)
-    image = models.ImageField(_('image'), upload_to=IMAGES_DIR, max_length=255)
-    title = models.CharField(_('title'), max_length=255)
-    width = models.IntegerField(_('width'), blank=True, null=True)
-    height = models.IntegerField(_('height'), blank=True, null=True)
+class Image(Model):
+    created = DateTimeField(_('created'), auto_now_add=True)
+    updated = DateTimeField(_('updated'), auto_now=True)
+    image = ImageField(_('image'), upload_to=IMAGES_DIR, max_length=255)
+    title = CharField(_('title'), max_length=255)
+    width = IntegerField(_('width'), blank=True, null=True)
+    height = IntegerField(_('height'), blank=True, null=True)
 
     class Meta:
         verbose_name = _('image')
@@ -336,11 +349,11 @@ class Image(models.Model):
 
 
 @python_2_unicode_compatible
-class File(models.Model):
-    created = models.DateTimeField(_('created'), auto_now_add=True)
-    updated = models.DateTimeField(_('updated'), auto_now=True)
-    file = models.FileField(_('file'), upload_to=FILES_DIR, max_length=255)
-    title = models.CharField(_('title'), max_length=255)
+class File(Model):
+    created = DateTimeField(_('created'), auto_now_add=True)
+    updated = DateTimeField(_('updated'), auto_now=True)
+    file = FileField(_('file'), upload_to=FILES_DIR, max_length=255)
+    title = CharField(_('title'), max_length=255)
 
     class Meta:
         verbose_name = _('file')

@@ -53,8 +53,8 @@ class SlideShow extends Component {
     };
 
     return (
-      <div className={ classNames(styles.slideshowBackground, {'no-display': !isActive}) }>
-        <div className={ classNames(styles.SlideShow, {active: isActive}) }>
+      <div className={ classNames(styles.slideshowBackground, { 'no-display': !isActive }) }>
+        <div className={ classNames(styles.SlideShow, { 'active': isActive }) }>
           <Slides contents={ slides } />
           <SlideShowCtrl { ...slideShowCtrlProps } />
         </div>
@@ -79,6 +79,9 @@ class SlideShow extends Component {
   }
 
   getSlides() {
+    const { children } = this.props;
+    const filteredChildren = children.filter();
+
     return Children.toArray(this.props.children).filter((child) => {
       return (typeof child === 'object');
     });
@@ -97,7 +100,7 @@ class SlideShow extends Component {
     const nextSlide = this.getNextSlide();
 
     if (this.hasNextSlide(nextSlide)) {
-      this.setState({currentSlide: nextSlide});
+      this.setState({ currentSlide: nextSlide });
     } else {
       if (this.props.closeOnEnd) {
         this.setSlideShowStateInactive();
@@ -138,6 +141,34 @@ class SlideShow extends Component {
     }
 
     return false;
+  }
+
+  someFunction(par1, par2, par3) {
+    if (par1 >= par2 || par2 <= par3 || par1 === par3 || par1 !== par2) {
+      // Do some really silly stuff
+    }
+
+    return Math.sum([par1, par2, par3]);
+  }
+
+  someDeciding(caseName) {
+    switch(caseName) {
+      case 'caseOne':
+        console.log('Case one!');
+        break;
+
+      case 'caseTwo':
+        console.log('Case two!');
+        break;
+
+      case 'caseEtc':
+        console.log('Case etcetera!');
+        break;
+
+      default:
+        console.log('Default case!');
+        break;
+    }
   }
 }
 
