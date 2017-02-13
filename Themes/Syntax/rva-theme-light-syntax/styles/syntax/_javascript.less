@@ -23,7 +23,7 @@
     &.syntax--name {
 
       &.syntax--class {
-        color: @green;
+        text-decoration: underline;
       }
 
       &.syntax--function {
@@ -35,6 +35,51 @@
         &.syntax--object {
           color: @syntax-reserved-color;
         }
+      }
+    }
+  }
+
+  .syntax--keyword {
+
+    &.syntax--control {
+      color: @black;
+
+      &.syntax--flow {
+        color: @syntax-variable-color;
+      }
+
+      &.syntax--module {
+        color: @green;
+      }
+    }
+
+    &.syntax--operator {
+      color: @black;
+    }
+  }
+
+  .syntax--meta {
+
+    &.syntax--class {
+
+      &.syntax--extends {
+
+        // Imported and previously declared classNames
+        & + .syntax--entity.syntax--name.syntax--class {
+          color: @green;
+        }
+      }
+    }
+
+    &.syntax--brace,
+    &.syntax--delimiter {
+      color: @black;
+    }
+
+    &.syntax--function {
+
+      &.syntax--parameters {
+        color: @red;
       }
     }
   }
@@ -54,12 +99,16 @@
   }
 
   .syntax--variable {
-    color: @syntax-text-color;
 
     &.syntax--other {
 
+      &.syntax--class {
+        color: @green;
+        text-decoration: underline;
+      }
+
       &.syntax--constant {
-        color: @syntax-variable-color;
+        color: @syntax-constant-color;
       }
     }
 
