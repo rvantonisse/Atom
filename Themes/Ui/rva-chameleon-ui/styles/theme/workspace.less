@@ -1,0 +1,25 @@
+@padding: @ui-whitespace-less;
+
+atom-workspace-axis {
+
+  &.horizontal {
+    padding: @padding;
+  }
+
+  &.vertical {
+    border-bottom: 1px solid @base-border-color;
+
+    .item-views {
+      border-right: 1px solid @base-border-color;
+    }
+  }
+}
+
+atom-panel-container {
+
+  &.left {
+    border-top: 1px solid @base-border-color;
+    border-bottom: 1px solid @base-border-color;
+    border-left: 1px solid @base-border-color;
+  }
+}
