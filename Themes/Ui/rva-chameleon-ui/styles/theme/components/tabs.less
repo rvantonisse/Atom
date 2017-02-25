@@ -1,0 +1,114 @@
+@tab-font-size: @font-size;
+
+.tab-bar {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid @base-border-color;
+  background-color: @tab-bar-background-color;
+
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-top: 1px solid @base-border-color;
+    padding: 0 @ui-whitespace-less;
+    width: auto;
+    min-width: 5em;
+    max-width: 15em;
+    height: @tab-height;
+    color: @text-color-subtle;
+    background-color: @tab-background-color;
+    font-size: @tab-font-size;
+    line-height: @tab-height;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      flex: 1 1 auto;
+    }
+
+    & + .tab {
+      border-left: 1px solid @base-border-color;
+
+      &:last-child {
+        border-right: 1px solid @base-border-color;
+      }
+    }
+
+    &.active {
+      flex: 1 1 auto;
+      bottom: -1px;
+      color: @text-color;
+      background-color: @tab-background-color-active;
+      box-shadow: 0 -1px 1px 0 @base-border-color;
+
+      .close-icon {
+        display: inline-block;
+      }
+    }
+
+    &.modified {
+      color: @text-color-info;
+
+      &:hover {
+        .close-icon {
+          color: currentColor;
+        }
+      }
+
+      &:not(:hover) {
+        .close-icon {
+          position: relative;
+          top: auto;
+          right: auto;
+          border: none;
+          width: inherit;
+          height: inherit;
+
+          &::before {
+            position: relative;
+            top: auto;
+            right: auto;
+            display: inline-block;
+            content: "\f081";
+            font-family: 'Octicons Regular';
+            font-weight: normal;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .title {
+      flex: 1 1 auto;
+      order: 1;
+    }
+
+    .close-icon {
+      display: none;
+      position: relative;
+      top: auto;
+      right: auto;
+      flex: 0 1 auto;
+      order: 2;
+      cursor: pointer;
+
+      &::before {
+        font-family: 'Octicons Regular';
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        text-decoration: none;
+        font-size: 12px;
+        width: 12px;
+        height: 12px;
+        content: "\f081";
+      }
+    }
+  }
+}
