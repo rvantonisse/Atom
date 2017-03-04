@@ -8,43 +8,37 @@
 
   .tab {
     display: flex;
+    flex: 1 1 auto;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    border-top: 1px solid @base-border-color;
-    padding: 0 @ui-whitespace-less;
-    width: auto;
-    min-width: 5em;
-    max-width: 15em;
-    height: @tab-height;
+    padding: @ui-whitespace;
+    width: 10em;
     color: @text-color-subtle;
     background-color: @tab-background-color;
     font-size: @tab-font-size;
-    line-height: @tab-height;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
+    transition: all (@ui-transition-duration * 2) ease;
 
     &:hover {
-      flex: 1 1 auto;
-    }
+      width: 10em;
+      color: @text-color;
 
-    & + .tab {
-      border-left: 1px solid @base-border-color;
-
-      &:last-child {
-        border-right: 1px solid @base-border-color;
+      .close-icon {
+        opacity: 1;
       }
     }
 
     &.active {
-      flex: 1 1 auto;
+      flex: 2 0 auto;
       bottom: -1px;
       color: @text-color;
+      width: 20em;
+      max-width: 20em;
       background-color: @tab-background-color-active;
-      box-shadow: 0 -1px 1px 0 @base-border-color;
+      box-shadow: 0 -1px 2px 0 @base-border-color;
 
       .close-icon {
-        display: inline-block;
+        opacity: 1;
       }
     }
 
@@ -53,61 +47,73 @@
 
       &:hover {
         .close-icon {
-          color: currentColor;
+          color: fade(@text-color-info, 50%);
         }
       }
 
       &:not(:hover) {
         .close-icon {
-          position: relative;
           top: auto;
           right: auto;
-          border: none;
-          width: inherit;
-          height: inherit;
+          width: auto;
+          height: auto;
+          border: 1px solid @base-border-color;
+          border-radius: @ui-border-radius;
+        }
+      }
+
+      &.active {
+        .close-icon {
+          color: inherit;
 
           &::before {
-            position: relative;
-            top: auto;
-            right: auto;
-            display: inline-block;
+            display: inline;
             content: "\f081";
+            position: relative;
+            font-size: 1em;
             font-family: 'Octicons Regular';
             font-weight: normal;
             font-style: normal;
-            -webkit-font-smoothing: antialiased;
             text-decoration: none;
+            -webkit-font-smoothing: antialiased;
           }
         }
       }
     }
 
     .title {
-      flex: 1 1 auto;
-      order: 1;
+      display: inline;
+      flex: 3 1 auto;
     }
 
     .close-icon {
-      display: none;
+      opacity: 0;
+      flex: 0 0 auto;
       position: relative;
       top: auto;
       right: auto;
-      flex: 0 1 auto;
-      order: 2;
+      border: 1px solid @base-border-color;
+      border-radius: @ui-border-radius;
+      padding: @ui-whitespace-min @ui-whitespace-less;
+      text-align: center;
       cursor: pointer;
+      transition: all @ui-transition-duration ease;
+
+      &:hover {
+        color: @text-color;
+        border-radius: @font-size;
+      }
 
       &::before {
+        display: inline;
+        content: "\f081";
+        position: relative;
+        font-size: 1em;
         font-family: 'Octicons Regular';
         font-weight: normal;
         font-style: normal;
-        display: inline-block;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
         text-decoration: none;
-        font-size: 12px;
-        width: 12px;
-        height: 12px;
-        content: "\f081";
+        -webkit-font-smoothing: antialiased;
       }
     }
   }

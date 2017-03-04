@@ -1,0 +1,66 @@
+
+// Tree View
+// -------------------
+
+// Used to explore and open files in the current project.
+// Overrides: atom/tree-view
+
+
+.tree-view-resizer {
+  display: flex;
+  flex-direction: row;
+  background-color: @tree-view-background-color;
+
+  &[data-show-on-right-side='false'] {
+    .tree-view-resize-handle {
+      right: auto;
+    }
+  }
+
+  .tree-view-scroller {
+    border-top: 1px solid @base-border-color;
+    border-bottom: 1px solid @base-border-color;
+    border-left: 1px solid @base-border-color;
+
+    .tree-view {
+      color: @text-color;
+
+      .list-item {
+        color: @text-color;
+
+        &:hover {
+          background-color: @ui-selection-color;
+        }
+      }
+
+      .status-added {
+
+        .list-item {
+          color: @ui-color-green;
+        }
+      }
+
+      .status-ignored {
+
+        .list-item {
+          color: @text-color-subtle;
+        }
+      }
+
+      .status-modified {
+
+        .list-item {
+          color: @ui-color-orange;
+        }
+      }
+    }
+  }
+
+  .tree-view-resize-handle {
+    flex: 0 0 auto;
+    position: relative;
+    border-left: 1px solid @base-border-color;
+    width: @ui-whitespace-min;
+    background-color: @app-background-color;
+  }
+}
