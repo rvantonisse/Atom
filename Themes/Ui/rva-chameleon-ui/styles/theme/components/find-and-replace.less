@@ -1,0 +1,64 @@
+
+// Find + Replace
+// -------------------
+
+// Find and replace in the current buffer or across the entire project.
+// Overrides: atom/find-and-replace
+
+.project-find,
+.find-and-replace {
+  border: none;
+  padding: 0;
+  background-color: @app-background-color;
+
+  & > .header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .header-item {
+      margin: 0;
+
+      & + .header-item {
+        padding-left: @ui-whitespace-less;
+      }
+    }
+
+    .description {
+      flex: 100 1 20em;
+    }
+
+    .options-label {
+      display: flex;
+      flex-direction: column;;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex: 1 1 320px;
+
+      .btn-group {
+        width: 100%;
+      }
+    }
+  }
+
+  & > .input-block {
+
+    .input-block-item {
+
+      &:not(.editor-container) {
+        flex: 1 1 auto;
+        min-width: 320px;
+      }
+
+      &.editor-container {
+        flex: 100 1 auto;
+      }
+
+      & + .input-block-item {
+        padding-left: @ui-whitespace-less;
+      }
+    }
+  }
+}

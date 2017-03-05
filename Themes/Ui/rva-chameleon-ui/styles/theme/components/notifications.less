@@ -1,0 +1,22 @@
+atom-notifications {
+  top: @tab-height + @ui-whitespace;
+}
+
+
+atom-notification,
+atom-notification.has-close,
+atom-notification.has-close:first-child {
+  box-shadow: 0 0 1em 0 @app-background-color;
+
+  & + atom-notification {
+    margin-top: @ui-whitespace-min;
+  }
+
+  .content {
+
+    .message {
+      padding: @ui-whitespace;
+      width: auto;
+    }
+  }
+}

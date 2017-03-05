@@ -13,34 +13,34 @@
 
 // Text Colors
 @text-color:           @ui-foreground-color;
-@text-color-subtle:    fade(@text-color, 5%);
-@text-color-highlight: hsl(0,0%,94%);
-@text-color-selected:  hsl(0,0%,100%);
+@text-color-subtle:    fade(@text-color, 50%);
+@text-color-highlight: lighten(@text-color, 10%);
+@text-color-selected:  @text-color;
 
-@text-color-info:    hsl(219,  79%, 66%);
-@text-color-success: hsl(140,  44%, 62%);
-@text-color-warning: hsl( 36,  60%, 72%);
-@text-color-error:   hsl(  9, 100%, 64%);
+@text-color-info:    @ui-color-blue;
+@text-color-success: @ui-color-green;
+@text-color-warning: @ui-color-orange;
+@text-color-error:   @ui-color-red;
 
 // Background colors
-@background-color-info:    hsl(208, 100%, 50%);
-@background-color-success: hsl(160,  70%, 36%);
-@background-color-warning: hsl(32,   60%, 50%);
-@background-color-error:   hsl(0,    70%, 50%);
+@background-color-info:    lighten(@ui-color-blue, 20%);
+@background-color-success: lighten(@ui-color-green, 20%);
+@background-color-warning: lighten(@ui-color-orange, 20%);
+@background-color-error:   lighten(@ui-color-red, 20%);
 
 @background-color-highlight: lighten(@base-background-color, 5%);
-@background-color-selected:  lighten(@base-background-color, 10%);
-@app-background-color:       darken(@base-background-color, 5%);
+@background-color-selected:  @ui-selection-color;
+@app-background-color:       darken(@base-background-color, 10%);
 
 // Base colors
 @base-background-color: @ui-background-color;
-@base-border-color:     darken(@base-background-color, 8%);
+@base-border-color:     darken(@app-background-color, 10%);
 
 // Component colors
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color:     @base-border-color;
 
-@input-background-color: @app-background-color;
+@input-background-color: @base-background-color;
 @input-border-color:     @base-border-color;
 
 @tool-panel-background-color: @base-background-color;
@@ -56,14 +56,14 @@
 @overlay-border-color:     @base-border-color;
 
 @button-background-color:          lighten(@base-background-color, 10%);
-@button-background-color-hover:    lighten(@button-background-color, 12%);
+@button-background-color-hover:    darken(@button-background-color, 5%);
 @button-background-color-selected: @button-background-color-hover;
-@button-border-color:              @base-border-color;
+@button-border-color:              @text-color;
 
-@tab-bar-background-color:    @base-background-color;
+@tab-bar-background-color:    @app-background-color;
 @tab-bar-border-color:        @base-border-color;
 @tab-background-color:        @tab-bar-background-color;
-@tab-background-color-active: lighten(@tab-bar-background-color, 10%);
+@tab-background-color-active: @base-background-color;
 @tab-border-color:            @base-border-color;
 
 @tree-view-background-color: @base-background-color;
@@ -77,18 +77,18 @@
 @ui-site-color-5: #EBDD5B;             // yellow
 
 // Sizes
-@font-size: 12px;
-@input-font-size: 14px;
+@font-size: 1em;
+@input-font-size: @font-size;
 
-@disclosure-arrow-size: 12px;
+@disclosure-arrow-size: @font-size;
 
-@component-padding: 10px;
-@component-icon-padding: 5px;
-@component-icon-size: 16px;
-@component-line-height: 25px;
+@component-padding: @ui-whitespace-less;
+@component-icon-padding: @ui-whitespace-min;
+@component-icon-size: @font-size;
+@component-line-height: 1.5em;
 
 @tab-height: 3em;
 
 // Misc
-@component-border-radius: 2px;
+@component-border-radius: @ui-border-radius;
 @font-family: '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;

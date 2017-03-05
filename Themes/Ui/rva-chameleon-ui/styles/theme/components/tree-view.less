@@ -35,21 +35,24 @@
 
       .status-added {
 
-        .list-item {
+        & > .header,
+        &.list-item {
           color: @ui-color-green;
         }
       }
 
       .status-ignored {
 
-        .list-item {
-          color: @text-color-subtle;
+        & > .header,
+        &.list-item {
+          color: fade(@text-color-subtle, 25%);
         }
       }
 
       .status-modified {
 
-        .list-item {
+        & > .header,
+        &.list-item {
           color: @ui-color-orange;
         }
       }

@@ -21,7 +21,11 @@
 
     &:hover {
       width: 10em;
-      color: @text-color;
+
+      .title {
+        color: @text-color;
+        transition: color @ui-transition-duration ease;
+      }
 
       .close-icon {
         opacity: 1;
@@ -36,6 +40,14 @@
       max-width: 20em;
       background-color: @tab-background-color-active;
       box-shadow: 0 -1px 2px 0 @base-border-color;
+
+      &:first-child {
+        border-left: 1px solid @base-border-color;
+      }
+
+      &:last-child {
+        border-right: 1px solid @base-border-color;
+      }
 
       .close-icon {
         opacity: 1;

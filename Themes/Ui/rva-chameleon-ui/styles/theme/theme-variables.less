@@ -1,9 +1,30 @@
 /*
 ** THEME RVA CHAMELEON UI - VARIABLES
 */
+
 // import syntax variables
 @import "syntax-variables";
 
 // UI Colors
 @ui-foreground-color: @syntax-text-color;
 @ui-background-color: @syntax-background-color;
+@ui-selection-color: @syntax-selection-color;
+
+// Reserved colors
+@ui-color-blue: @syntax-color-renamed;
+@ui-color-green: @syntax-color-added;
+@ui-color-orange: @syntax-color-modified;
+@ui-color-red: @syntax-color-removed;
+
+// UI Sizes
+@ui-whitespace-more: 1.5em;
+@ui-whitespace: 1em;
+@ui-whitespace-less: 0.5em;
+@ui-whitespace-min: 0.25em;
+
+@ui-border-radius: 3px;
+
+// UI transitions
+@ui-transition-property: opacity, color, background-color;
+@ui-transition-duration: 0.2s;
+@ui-transition-timing: ease;
