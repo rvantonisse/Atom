@@ -23,10 +23,10 @@
 @text-color-error:   @ui-color-red;
 
 // Background colors
-@background-color-info:    lighten(@ui-color-blue, 15%);
-@background-color-success: lighten(@ui-color-green, 15%);
-@background-color-warning: lighten(@ui-color-orange, 15%);
-@background-color-error:   lighten(@ui-color-red, 15%);
+@background-color-info:    lighten(@text-color-info, 20%);
+@background-color-success: lighten(@text-color-success, 20%);
+@background-color-warning: lighten(@text-color-warning, 20%);
+@background-color-error:   lighten(@text-color-error, 20%);
 
 @background-color-highlight: lighten(@base-background-color, 5%);
 @background-color-selected:  @ui-selection-color;
@@ -55,8 +55,8 @@
 @overlay-background-color: lighten(@base-background-color, 5%);
 @overlay-border-color:     @base-border-color;
 
-@button-background-color:          lighten(@base-background-color, 10%);
-@button-background-color-hover:    darken(@button-background-color, 5%);
+@button-background-color:          @base-background-color;
+@button-background-color-hover:    darken(@button-background-color, 10%);
 @button-background-color-selected: @button-background-color-hover;
 @button-border-color:              @text-color;
 
