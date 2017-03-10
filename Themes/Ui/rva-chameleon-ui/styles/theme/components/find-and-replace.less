@@ -11,22 +11,20 @@
   padding: 0;
   background-color: @app-background-color;
 
-  & > .header {
+  .header {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
+    padding: 0;
 
     .header-item {
       margin: 0;
-
-      & + .header-item {
-        padding-left: @ui-whitespace-less;
-      }
+      padding: @ui-whitespace-min;
     }
 
     .description {
-      flex: 100 1 20em;
+      flex: 2 1 320px;
     }
 
     .options-label {
@@ -35,7 +33,7 @@
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between;
-      flex: 1 1 320px;
+      flex: 1 1 160px;
 
       .btn-group {
         width: 100%;
@@ -43,21 +41,13 @@
     }
   }
 
-  & > .input-block {
-
+  .find-container,
+  .replace-container {
     .input-block-item {
-
-      &:not(.editor-container) {
-        flex: 1 1 auto;
-        min-width: 320px;
-      }
+      flex: 1 1 160px;
 
       &.editor-container {
-        flex: 100 1 auto;
-      }
-
-      & + .input-block-item {
-        padding-left: @ui-whitespace-less;
+        flex: 2 0 320px;
       }
     }
   }

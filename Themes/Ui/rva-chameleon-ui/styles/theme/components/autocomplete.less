@@ -1,0 +1,74 @@
+autocomplete-suggestion-list.popover-list.select-list {
+  width: auto;
+  min-width: 10em;
+  max-width: 40em;
+  font-size: @font-size * 0.75;
+  background-color: @app-background-color;
+  box-shadow: 0 0 1em 0 fade(@text-color, 50%);
+
+  .suggestion-list-scroller {
+
+    .list-group {
+      li {
+        display: block;
+        padding: 0;
+        height: 2em;
+        line-height: 2em;
+
+        &::after {
+          display: block;
+          content: " ";
+          clear: both;
+        }
+
+        .icon-container {
+          display: inline-block;
+          float: left;
+          margin-right: @ui-whitespace-less;
+        }
+
+        .word-container {
+          display: inline;
+          position: relative;
+          padding: 0;
+          width: 100%;
+          max-width: 20em;
+
+          .word {
+            float: none;
+
+            .character-match {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .left-label,
+        .right-label {
+          display: inline;
+          float: none;
+        }
+
+        &.selected {
+
+          &::before {
+            height: 2em;
+            line-height: 2em;
+          }
+        }
+      }
+    }
+  }
+
+  .suggestion-description {
+    font-size: @font-size;
+
+    .suggestion-description-content {
+      font-size: @font-size;
+    }
+
+    .suggestion-description-more-link {
+      font-size: @font-size;
+    }
+  }
+}
