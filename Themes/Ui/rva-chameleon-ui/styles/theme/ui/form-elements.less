@@ -1,0 +1,32 @@
+atom-text-editor[mini] {
+  .editor--private {
+    padding: @ui-whitespace-min;
+  }
+}
+
+.control-group {
+
+  .controls {
+
+    .checkbox {
+
+      label {
+        position: relative;
+
+        .input-checkbox {
+          position: absolute;
+          top: 0;
+          right: 100%;
+          margin-top: @ui-whitespace-less;
+          margin-right: @ui-whitespace-less;
+        }
+      }
+    }
+  }
+
+  .form-control {
+    padding: @component-padding;
+    height: auto;
+    cursor: pointer;
+  }
+}

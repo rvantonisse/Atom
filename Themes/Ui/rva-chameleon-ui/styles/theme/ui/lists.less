@@ -1,0 +1,17 @@
+.list-group {
+  display: inline-block;
+
+  li {
+    display: block;
+    font-size: @font-size;
+    line-height: 1.5em;
+
+    &.selected {
+      background-color: @background-color-selected;
+
+      &::before {
+        height: 100%;
+      }
+    }
+  }
+}

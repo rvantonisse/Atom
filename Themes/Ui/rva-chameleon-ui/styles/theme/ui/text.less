@@ -1,0 +1,33 @@
+// Highlights
+.highlight {
+  .highlighter(@ui-selection-color);
+}
+
+.highlight-info {
+  .highlighter(@background-color-info);
+}
+
+.highlight-success {
+  .highlighter(@background-color-success);
+}
+
+.highlight-warning {
+  .highlighter(@background-color-warning);
+}
+
+.highlight-error {
+  .highlighter(@background-color-error);
+}
+
+.highlighter(@color) {
+  padding: @ui-whitespace-less;
+  color: @text-color;
+  background-color: @color;
+}
+
+.keystroke {
+  border: 1px solid currentColor;
+  border-radius: @component-border-radius;
+  padding: @ui-whitespace-min;
+  font-size: 0.75em;
+}
