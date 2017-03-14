@@ -8,24 +8,20 @@
 
   .tab {
     display: flex;
-    flex: 1 1 auto;
+    box-sizing: border-box;
+    flex: 1 2 10em;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: @ui-whitespace;
-    width: 10em;
+    max-height: @tab-height;
     color: @text-color-subtle;
     background-color: @tab-background-color;
     font-size: @tab-font-size;
     transition: all (@ui-transition-duration * 2) ease;
 
     &:hover {
-      width: 10em;
-
-      .title {
-        color: @text-color;
-        transition: color @ui-transition-duration ease;
-      }
+      color: @text-color;
 
       .close-icon {
         opacity: 1;
@@ -33,7 +29,7 @@
     }
 
     &.active {
-      flex: 2 0 auto;
+      flex: 2 1 auto;
       bottom: -1px;
       color: @text-color;
       width: 20em;
@@ -69,14 +65,14 @@
           right: auto;
           width: auto;
           height: auto;
-          border: 1px solid @base-border-color;
+          border: 1px solid currentColor;
           border-radius: @ui-border-radius;
+          color: inherit;
         }
       }
 
       &.active {
         .close-icon {
-          color: inherit;
 
           &::before {
             display: inline;
@@ -96,6 +92,7 @@
     .title {
       display: inline;
       flex: 3 1 auto;
+      color: inherit;
     }
 
     .close-icon {
@@ -104,15 +101,18 @@
       position: relative;
       top: auto;
       right: auto;
-      border: 1px solid @base-border-color;
+      border: 1px solid currentColor;
       border-radius: @ui-border-radius;
       padding: @ui-whitespace-min @ui-whitespace-less;
+      width: @font-size * 2 !important;
+      height: @font-size * 2 !important;
+      color: inherit;
       text-align: center;
+      vertical-align: middle;
       cursor: pointer;
-      transition: all @ui-transition-duration ease;
+      transition: border-radius @ui-transition-duration ease;
 
       &:hover {
-        color: @text-color;
         border-radius: @font-size;
       }
 
@@ -120,7 +120,7 @@
         display: inline;
         content: "\f081";
         position: relative;
-        font-size: 1em;
+        font-size: @font-size;
         font-family: 'Octicons Regular';
         font-weight: normal;
         font-style: normal;
