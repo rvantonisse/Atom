@@ -19,6 +19,7 @@
   .highlighter(@background-color-error);
 }
 
+// Highlighter tool
 .highlighter(@color) {
   padding: @ui-whitespace-less;
   color: @text-color;
@@ -30,4 +31,29 @@
   border-radius: @component-border-radius;
   padding: @ui-whitespace-min;
   font-size: 0.75em;
+}
+
+.info-message,
+.info-messages,
+.loading,
+.status-renamed,
+.text-info {
+  color: @text-color-info !important;
+}
+
+.status-success,
+.text-success {
+  color: @text-color-success !important;
+}
+
+.status-modified,
+.text-warning {
+  color: @text-color-warning !important;
+}
+
+.error-message,
+.error-messages,
+.status-error,
+.text-error {
+  color: @text-color-error !important;
 }

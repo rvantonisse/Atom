@@ -52,16 +52,23 @@
 // Button generator!
 .button(@color) {
   border-color: @color !important;
-  color: @color;
+  color: @button-background-color;
+  background-color: @color;
 
   &:hover {
     color: @button-background-color;
     background-color: fade(@color, 80%);
   }
 
-  &.selected {
+  &:focus {
     color: @button-background-color;
     background-color: @color;
+    outline: none;
+  }
+
+  &.selected {
+    color: @color;
+    background-color: transparent;
 
     &:hover {
       color: @color;
