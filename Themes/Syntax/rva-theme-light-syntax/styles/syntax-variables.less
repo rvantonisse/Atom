@@ -35,8 +35,15 @@
 @syntax-gutter-background-color: @very-light-gray;
 @syntax-gutter-background-color-selected: @syntax-selection-color;
 
+// State coloring
+@syntax-color-info: @blueaqua;
+@syntax-color-success: @green;
+@syntax-color-warning: @orange;
+@syntax-color-error: @red;
+
+
 // For git diff info. i.e. in the gutter
-@syntax-color-renamed: @blue;
-@syntax-color-added: @green;
-@syntax-color-modified: @orange;
-@syntax-color-removed: @red;
+@syntax-color-renamed: @syntax-color-info;
+@syntax-color-added: @syntax-color-success;
+@syntax-color-modified: @syntax-color-warning;
+@syntax-color-removed: @syntax-color-error;
