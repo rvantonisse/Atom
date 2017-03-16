@@ -1,0 +1,44 @@
+.settings-view {
+
+  .keybinding-panel {
+
+    .native-key-bindings,
+    .table {
+      box-sizing: border-box;
+
+      thead,
+      tbody {
+      }
+
+      tr {
+
+        th,
+        td {
+          box-sizing: border-box;
+          padding: @ui-whitespace-less;
+          height: auto;
+          max-width: 15%;
+          font-size: @font-size;
+
+          &.keystroke {
+            width: 20%;
+          }
+
+          &.command {
+            width: 20%;
+          }
+
+          &.source {
+            width: 20%;
+          }
+
+          &.selector {
+            width: 40%;
+            overflow-wrap: break-word;
+            overflow-x: auto;
+          }
+        }
+      }
+    }
+  }
+}
