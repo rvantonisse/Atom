@@ -1,25 +1,29 @@
 autocomplete-suggestion-list.popover-list.select-list {
+  display: inline-block;
   border: 1px solid @app-background-color;
-  width: auto;
-  min-width: 10em;
-  max-width: 40em;
+  width: auto !important;
+  min-width: 20em;
+  max-width: 60em;
   font-size: @font-size * 0.75;
   background-color: @app-background-color;
-  box-shadow: 0 0 1em 0.25em fade(@app-background-color, 50%);
+  box-shadow: 0 0 0.5em 0 @ui-shadow-color;
 
   .suggestion-list-scroller {
 
     .list-group {
+      margin: 0;
+
       li {
         display: block;
+        overflow: hidden;
         padding: 0;
         height: 2em;
         line-height: 2em;
 
         &::after {
           display: block;
-          content: " ";
           clear: both;
+          content: " ";
         }
 
         .icon-container {
@@ -47,6 +51,7 @@ autocomplete-suggestion-list.popover-list.select-list {
         .left-label,
         .right-label {
           display: inline;
+          overflow: auto;
           float: none;
         }
 
@@ -63,6 +68,7 @@ autocomplete-suggestion-list.popover-list.select-list {
 
   .suggestion-description {
     font-size: @font-size;
+    background-color: @app-background-color;
 
     .suggestion-description-content {
       font-size: @font-size;

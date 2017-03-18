@@ -8,17 +8,17 @@
 
   .tab {
     display: flex;
-    box-sizing: border-box;
     flex: 1 2 10em;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    box-sizing: border-box;
     padding: @ui-whitespace;
     max-height: @tab-height;
     color: @text-color-subtle;
-    background-color: @tab-background-color;
     font-size: @tab-font-size;
-    transition: all (@ui-transition-duration * 2) ease;
+    background-color: @tab-background-color;
+    transition: all @ui-transition-duration ease;
 
     &:hover {
       color: @text-color;
@@ -31,9 +31,9 @@
     &.active {
       flex: 2 1 auto;
       bottom: -1px;
-      color: @text-color;
       width: 20em;
       max-width: 20em;
+      color: @text-color;
       background-color: @tab-background-color-active;
       box-shadow: 0 -1px 2px 0 @base-border-color;
 
@@ -48,42 +48,52 @@
       .close-icon {
         opacity: 1;
       }
+
+      .foo {
+        content: "bar";
+      }
+    }
+
+    .foo {
+      content: "bar";
     }
 
     &.modified {
       color: @text-color-info;
 
       &:hover {
+
         .close-icon {
-          color: fade(@text-color-info, 50%);
+          color: @text-color-info;
         }
       }
 
       &:not(:hover) {
+
         .close-icon {
           top: auto;
           right: auto;
-          width: auto;
-          height: auto;
           border: 1px solid currentColor;
           border-radius: @ui-border-radius;
+          width: auto;
+          height: auto;
           color: inherit;
         }
       }
 
       &.active {
+
         .close-icon {
 
           &::before {
             display: inline;
-            content: "\f081";
             position: relative;
+            content: "\f081";
             font-size: 1em;
-            font-family: 'Octicons Regular';
+            font-family: "Octicons Regular";
             font-weight: normal;
             font-style: normal;
             text-decoration: none;
-            -webkit-font-smoothing: antialiased;
           }
         }
       }
@@ -109,8 +119,8 @@
       color: inherit;
       text-align: center;
       vertical-align: middle;
-      cursor: pointer;
       transition: border-radius @ui-transition-duration ease;
+      cursor: pointer;
 
       &:hover {
         border-radius: @font-size;
@@ -118,14 +128,13 @@
 
       &::before {
         display: inline;
-        content: "\f081";
         position: relative;
+        content: "\f081";
         font-size: @font-size;
-        font-family: 'Octicons Regular';
+        font-family: "Octicons Regular";
         font-weight: normal;
         font-style: normal;
         text-decoration: none;
-        -webkit-font-smoothing: antialiased;
       }
     }
   }

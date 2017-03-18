@@ -1,0 +1,177 @@
+/* Used inside tree-view */
+linter-decoration {
+  left: 0 !important;
+  width: 100% !important;
+
+  &.linter-error {
+    border-bottom: 3px double @text-color-error !important;
+  }
+
+  &.linter-warning {
+    border-bottom: 1px dashed @text-color-warning !important;
+  }
+
+  &.linter-info {
+    border-bottom: 1px dotted @text-color-info !important;
+  }
+}
+
+/* Used inside editor */
+.linter-highlight {
+
+  &.linter-error {
+
+    &.linter-gutter {
+      color: @text-color-error !important;
+    }
+
+    .region {
+      border-bottom: 3px double @text-color-error !important;
+    }
+  }
+
+  &.linter-warning {
+
+    &.linter-gutter {
+      color: @text-color-warning !important;
+    }
+
+    .region {
+      border-bottom: 1px dashed @text-color-warning !important;
+    }
+  }
+
+
+  &.linter-info {
+
+    &.linter-gutter {
+      color: @text-color-info !important;
+    }
+
+    .region {
+      border-bottom: 1px dotted @text-color-info !important;
+    }
+  }
+}
+
+/* Linter tooltips (hovering highlighted syntax) */
+#linter-tooltip {/* stylelint-disable-line */
+  margin: 0;
+  border: 1px solid @app-background-color;
+  max-width: 60em;
+  font-size: 0.75em;
+  background-color: @app-background-color;
+  box-shadow: 0 0 @ui-whitespace-less 0 @ui-shadow-color;
+
+  linter-messages {
+
+    linter-message {
+      overflow: visible;
+      clear: both;
+      position: relative;
+      padding: @ui-whitespace-less;
+
+      &:last-child {
+
+        &::before {
+          border: none;
+          content: none;
+        }
+      }
+
+      &::after {
+        display: inline-block;
+        position: absolute;
+        top: @component-padding * 0.5;
+        left: @component-padding * 0.5;
+        font-family: "Octicons Regular";
+        font-size: 2em;
+        font-weight: lighter;
+        line-height: 0.75em;
+      }
+
+      & + linter-message {
+        border-top: 1px solid @app-background-color;
+      }
+
+      &.error {
+        color: @text-color-error;
+        background-color: fade(@background-color-error, 20%);
+
+        &::after {
+          content: "\f08f";
+        }
+      }
+
+      &.warning {
+        color: @text-color-warning;
+        background-color: fade(@background-color-warning, 20%);
+
+        &::after {
+          content: "\f02c";
+        }
+      }
+
+      &.info {
+        color: @text-color-info;
+        background-color: fade(@background-color-info, 20%);
+
+        &::after {
+          content: "\f059";
+        }
+      }
+
+      & > span {
+        display: block;
+        padding-left: @component-padding * 5;
+
+        & > a {
+          color: inherit !important;
+        }
+      }
+
+      & > a {
+        display: none;
+      }
+    }
+  }
+}
+
+/* @status-bar */
+.linter-status-count {
+  overflow: visible;
+  max-width: none;
+
+  span[class^="highlight"] {
+    transition: all @ui-transition-duration ease;
+
+    & + span {
+      margin-left: @component-padding;
+    }
+
+    &::before {
+      margin-right: @component-icon-padding;
+    }
+
+    &:nth-child(1) {
+
+      &::before {
+        content: "!";
+      }
+    }
+
+    &:nth-child(2) {
+
+      &::before {
+        content: "?";
+      }
+    }
+
+    &:nth-child(3) {
+
+      &::before {
+        content: "i";
+      }
+    }
+  }
+}

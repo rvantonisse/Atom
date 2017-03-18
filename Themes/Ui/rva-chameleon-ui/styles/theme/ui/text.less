@@ -1,29 +1,28 @@
-// Highlights
-.highlight {
-  .highlighter(@ui-selection-color);
-}
-
+/*
+** HIGHLIGHTS
+*/
 .highlight-info {
-  .highlighter(@background-color-info);
+  .highlighter(@text-color-info, @background-color-info);
 }
 
 .highlight-success {
-  .highlighter(@background-color-success);
+  .highlighter(@text-color-success, @background-color-success);
 }
 
 .highlight-warning {
-  .highlighter(@background-color-warning);
+  .highlighter(@text-color-warning, @background-color-warning);
 }
 
 .highlight-error {
-  .highlighter(@background-color-error);
+  .highlighter(@text-color-error, @background-color-error);
 }
 
-// Highlighter tool
-.highlighter(@color) {
+// Highlight mixin
+.highlighter(@fg, @bg) {
+  border-radius: @component-border-radius;
   padding: @ui-whitespace-less;
-  color: @text-color;
-  background-color: @color;
+  color: @fg;
+  background-color: fade(@bg, 20%);
 }
 
 .keystroke {
@@ -56,4 +55,8 @@
 .status-error,
 .text-error {
   color: @text-color-error !important;
+}
+
+a {
+  color: inherit;
 }

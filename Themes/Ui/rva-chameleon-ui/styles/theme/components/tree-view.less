@@ -11,7 +11,8 @@
   flex-direction: row;
   background-color: @tree-view-background-color;
 
-  &[data-show-on-right-side='false'] {
+  &[data-show-on-right-side="false"] {
+
     .tree-view-resize-handle {
       right: auto;
     }
@@ -31,6 +32,16 @@
 
         &:hover {
           background-color: @ui-selection-color;
+        }
+
+        &.selected {
+
+          &::before {
+            display: block;
+            box-sizing: border-box;
+            margin-top: -@ui-whitespace-min;
+            height: @font-size * 1.5 + @ui-whitespace-less;
+          }
         }
       }
 
