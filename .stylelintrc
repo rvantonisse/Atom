@@ -1,0 +1,167 @@
+{
+  "plugins": [
+    "stylelint-order",
+  ],
+  "rules": {
+    "order/properties-order": [
+      [
+        {
+          "properties": [
+            "display",
+            "visibility",
+            "opacity",
+            "overflow",
+          ],
+        },
+        {
+          "properties": [
+            "float",
+            "clear",
+          ],
+        },
+        {
+          "properties": [
+            "flex",
+            "flex-direction",
+            "flex-wrap",
+            "align-items",
+            "justify-content",
+          ],
+        },
+        {
+          "properties": [
+            "position",
+            "z-index",
+            "top",
+            "right",
+            "bottom",
+            "left",
+          ],
+        },
+        {
+          "properties": [
+            "box-sizing",
+            "margin",
+            "margin-top",
+            "margin-right",
+            "margin-bottom",
+            "margin-left",
+            "border",
+            "border-top",
+            "border-right",
+            "border-bottom",
+            "border-left",
+            "border-radius",
+            "padding",
+            "padding-top",
+            "padding-right",
+            "padding-bottom",
+            "padding-left",
+            "width",
+            "min-width",
+            "max-width",
+            "height",
+            "min-height",
+            "max-height",
+          ],
+        },
+        "content",
+        {
+          "properties": [
+            "color",
+            "font",
+            "line",
+            "text",
+            "word",
+            "letter",
+          ],
+        },
+        {
+          "properties": [
+            "background",
+            "box-shadow",
+            "vertical-align",
+          ],
+        },
+        "animation",
+        "transition",
+      ],
+      {
+        "severity": "warning",
+        "unspecified": "bottom",
+      },
+    ],
+    "block-closing-brace-newline-before": "always",
+    "block-no-empty": true,
+    "block-opening-brace-newline-after": "always",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "comment-empty-line-before": "always",
+    "comment-whitespace-inside": "always",
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-newline-before": "never-multi-line",
+    "declaration-block-single-line-max-declarations": [
+      0,
+      {
+        "message": "Writing consistent styles: No single-line declarations.",
+      },
+    ],
+    "declaration-block-semicolon-space-before": "never",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-colon-newline-after": "always-multi-line",
+    "declaration-colon-space-after": "always-single-line",
+    "declaration-colon-space-before": "never",
+    "indentation": 2,
+    "length-zero-no-unit": true,
+    "max-empty-lines": 3,
+    "no-duplicate-selectors": true,
+    "no-eol-whitespace": true,
+    "number-leading-zero": "always",
+    "number-max-precision": 3,
+    "number-no-trailing-zeros": true,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "ignore": [
+          "after-comment",
+        ],
+      },
+    ],
+    "selector-attribute-quotes": "always",
+    "selector-combinator-space-after": "always",
+    "selector-combinator-space-before": "always",
+    "selector-descendant-combinator-no-non-space": true,
+    "selector-list-comma-newline-after": "always",
+    "selector-list-comma-newline-before": "never-multi-line",
+    "selector-list-comma-space-before": "never",
+    "selector-no-id": [
+      true,
+      {
+        "severity": "warning",
+        "message": "Element's id should not be used as selector, use a class- or tag-selector instead. (selector-no-id)",
+      },
+    ],
+    "selector-no-universal": [
+      true,
+      {
+        "severity": "warning",
+        "message": "Performance: Prevent universal-selector usage. (selector-no-universal)",
+      },
+    ],
+    "string-quotes": "double",
+    "unit-blacklist": [
+      "px",
+      {
+        "ignoreProperties": {
+          "px": [
+            "/top|right|bottom|left/",
+            "/^border/",
+            "/shadow$/",
+          ],
+        },
+      }
+    ],
+    "unit-no-unknown": true,
+    "value-list-comma-space-after": "always-single-line",
+  }
+}
