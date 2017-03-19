@@ -28,22 +28,35 @@
     .tree-view {
       color: @text-color;
 
-      .list-item {
-        padding: @ui-whitespace-min 0;
-        color: @text-color;
+      .list-tree {
 
-        &:hover {
-          background-color: @ui-selection-color;
-        }
-
-        &.selected {
+        .selected {
 
           &::before {
             display: block;
             box-sizing: border-box;
-            margin-top: -@ui-whitespace-min;
-            height: @font-size * 1.5 + @ui-whitespace-less;
+            height: 1.5em + 2 * @ui-whitespace-min;
+            line-height: 1.5em;
           }
+
+          &.list-item {
+
+            &::before {
+              margin-top: -@ui-whitespace-min;
+            }
+          }
+        }
+      }
+
+      .list-item {
+        padding: @ui-whitespace-min 0;
+        min-height: 2em;
+        max-height: 2em;
+        color: @text-color;
+        line-height: 1.5em;
+
+        &:hover {
+          background-color: @ui-selection-color;
         }
       }
 
