@@ -1,7 +1,7 @@
 atom-text-editor {
   color: @syntax-text-color;
-  background-color: @syntax-background-color;
   letter-spacing: 0.15em;
+  background-color: @syntax-background-color;
 
   .gutter {
     color: @syntax-gutter-text-color;
@@ -15,6 +15,22 @@ atom-text-editor {
     }
   }
 
+  .lines {
+
+    .cursor-line,
+    .line:hover {
+
+      &::before {
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 1.5em;
+        content: "";
+        background-color: @syntax-selection-color;
+      }
+    }
+  }
+
   .invisible-character {
     color: @syntax-invisible-character-color;
   }
@@ -24,11 +40,11 @@ atom-text-editor {
   }
 
   .cursor {
-    min-width: 0.5em;
-    background-color: @syntax-selection-color;
     border-color: @syntax-cursor-color;
     border-radius: @syntax-border-radius;
-    transition: opacity 0.25s ease;
+    min-width: 0.5em;
+    background-color: @syntax-selection-color;
+    transition: opacity 330ms ease;
   }
 
   .selection .region {

@@ -7,7 +7,7 @@
 @syntax-text-color: @very-dark-gray;
 @syntax-invisible-character-color: @gray;
 @syntax-cursor-color: @syntax-text-color;
-@syntax-selection-color: @transparent-white;
+@syntax-selection-color: fade(contrast(@syntax-background-color), 5%);
 @syntax-background-color: @very-light-gray;
 
 // Syntax base colors
@@ -22,7 +22,7 @@
 @syntax-indent-guide-color: @light-gray;
 
 // Sizes
-@syntax-border-radius: 3px;
+@syntax-border-radius: 3px;/* stylelint-disable */
 
 // For find and replace markers
 @syntax-result-marker-color: @gray;
