@@ -2,6 +2,27 @@ status-bar {
   border: none;
   font-size: inherit;
 
+  .status-bar-left,
+  .status-bar-right {
+    display: flex;
+    flex-direction: row;
+    padding: @component-padding 0;
+  }
+
+  .status-bar-left {
+
+    .inline-block {
+      margin-right: @ui-whitespace;
+    }
+  }
+
+  .status-bar-right {
+
+    .inline-block {
+      margin-left: @ui-whitespace;
+    }
+  }
+
   .file-info {
 
     &.buffer-modified {
