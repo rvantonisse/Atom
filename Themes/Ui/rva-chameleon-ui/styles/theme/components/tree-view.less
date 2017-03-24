@@ -24,10 +24,27 @@
     border-top: 1px solid @base-border-color;
     border-bottom: 1px solid @base-border-color;
     border-left: 1px solid @base-border-color;
+    padding-top: @tab-height;
+
+    &::before {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      padding: @ui-whitespace;
+      padding-left: @component-icon-size + 2 * @component-icon-padding;
+      width: 100%;
+      height: @tab-height;
+      content: "Project files";
+      font-weight: bold;
+      line-height: 1.5em;
+      background: linear-gradient(@base-background-color 70%, transparent);
+    }
 
     .tree-view {
       color: @text-color;
 
+      &.list-tree,
       .list-tree {
 
         .selected {
@@ -35,7 +52,7 @@
           &::before {
             display: block;
             box-sizing: border-box;
-            height: 1.5em + 2 * @ui-whitespace-min;
+            height: 1.5em + 2 * @ui-whitespace-min !important;
             line-height: 1.5em;
           }
 
